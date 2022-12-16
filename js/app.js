@@ -1,9 +1,9 @@
 //variables
 let monsterMood = {
-  happiness: 0,
-  anger: 0,
-  sleep: 0, 
-  hunger: 0,
+  happiness: 100,
+  anger: 100,
+  sleep: 100, 
+  hunger: 100,
 }
 //Constants
 
@@ -11,9 +11,31 @@ let monsterMood = {
 let monster = document.getElementById("monster")
 let testbtn = document.getElementById("testbtn")
 let status = document.getElementById("status")
+
+let fun = document.getElementById("navFun")
+let food = document.getElementById("navFood")
+let music = document.getElementById("navMusic")
+let sleep = document.getElementById("navSleep")
+
 //Event Listeners
 testbtn.addEventListener("click", checkMood)
+food.addEventListener("click", boostHunger)
+music.addEventListener("click", boostAnger)
+sleep.addEventListener("click", boostSleep)
+fun.addEventListener("click", boostHappiness)
 //functions
+render()
+displayMood()
+
+function render(){
+   let monsterMood = {
+    happiness: 100,
+    anger: 100,
+    sleep: 100, 
+    hunger: 100,
+  }
+}
+
 
 function checkMood(){
   if (monsterMood.happiness < 30){
@@ -30,8 +52,12 @@ function checkMood(){
   } 
   else if (monsterMood.happiness > 90){
     monster.src = "https://pbs.twimg.com/media/FkHWoZsUAAAljuE?format=png&name=120x120"; 
-  } 
+  }  
+  else{
+    monster.src = "https://pbs.twimg.com/media/FkHUUZ1UEAAsYJL?format=png&name=120x120"; 
+  }  
   displayMood()
+  console.log(monsterMood)
 }
 
 function displayMood(){
@@ -50,4 +76,21 @@ function displayMood(){
   else if(monsterMood.happiness > 90){
     status.innerHTML = "Happy!"
   }
+  
+}
+
+function boostHunger(){
+  console.log("Yum!")
+}
+
+function boostAnger(){
+  console.log("Im not mad")
+}
+
+function boostSleep(){
+  console.log("So woke")
+}
+
+function boostHappiness(){
+  console.log("Wow so happy")
 }
