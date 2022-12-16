@@ -1,0 +1,31 @@
+body{
+  width: 50%;
+  justify-items: center;
+  align-items: center;
+  margin: 0 25% 0 25%;
+  background-color: cornflowerblue;
+}
+.nav {
+  display: flex;
+  justify-content: space-around;
+  background: cornflowerblue;
+  width: 100%;
+  margin-bottom: 20%;
+}
+nav > div {
+  width: 100%;
+  border: 1px solid black;
+  text-align: center;
+}
+h5{
+  align-items: center;
+  justify-items: center;
+}
+img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 75%;
+  background-color: transparent;
+  height: 300px;
+}
