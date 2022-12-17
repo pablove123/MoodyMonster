@@ -17,6 +17,8 @@ let food = document.getElementById("navFood")
 let music = document.getElementById("navMusic")
 let sleep = document.getElementById("navSleep")
 
+let 
+
 //Event Listeners
 testbtn.addEventListener("click", checkMood)
 food.addEventListener("click", boostHunger)
