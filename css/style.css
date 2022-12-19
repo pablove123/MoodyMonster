@@ -4,18 +4,20 @@ body{
   align-items: center;
   margin: 0 25% 0 25%;
   background-color: cornflowerblue;
-  font-family: 'Rubik 80s Fade'
+  font-family: 'Press Start 2P'
 }
 .nav {
   display: flex;
   justify-content: space-around;
-  background: cornflowerblue;
   width: 100%;
 }
 nav > div {
   width: 100%;
   border: 1px solid black;
+  border-radius: 5px;
   text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 nav>div:hover{
   cursor: pointer;
@@ -100,4 +102,8 @@ h6{
 }
 h1{
   text-align: center;
+}
+h4{
+  border: 3px dashed black; 
+  padding: 5px; 
 }
