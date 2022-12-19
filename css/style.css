@@ -4,19 +4,23 @@ body{
   align-items: center;
   margin: 0 25% 0 25%;
   background-color: cornflowerblue;
+  font-family: 'Rubik 80s Fade'
 }
 .nav {
   display: flex;
   justify-content: space-around;
   background: cornflowerblue;
   width: 100%;
-  margin-bottom: 20%;
 }
 nav > div {
   width: 100%;
   border: 1px solid black;
   text-align: center;
 }
+nav>div:hover{
+  cursor: pointer;
+}
+
 h5{
   align-items: center;
   justify-items: center;
@@ -83,4 +87,17 @@ li > span {
 li{
   list-style: none;
   margin-top: 20px;
+}
+#nav-stats{
+  font-size: 20px;
+}
+#mood-stats{
+  font-size: 40px;
+  text-align: center;
+}
+h6{
+  text-align: right; 
+}
+h1{
+  text-align: center;
 }

@@ -5,7 +5,7 @@
   let sleep = 40;
   let hunger = 40;
 
-let timeLeft = 10
+let timeLeft = 60
 
 
 //Constants
@@ -33,7 +33,7 @@ let angerBar = document.getElementById("angerBar")
 let countdown = document.getElementById('timeLeft')
 
 //Event Listeners
-testbtn.addEventListener("click", checkMood)
+// testbtn.addEventListener("click", checkMood)
 food.addEventListener("click", boostHunger)
 music.addEventListener("click", boostAnger)
 sleepy.addEventListener("click", boostSleep)
@@ -54,7 +54,7 @@ function render(){
 
 
 function checkMood(){
-  if (happiness < 10){
+  if (happiness < 20){
     monster.src = "https://pbs.twimg.com/media/FkHXjOdVsAEsK2O?format=png&name=120x120"; 
   }
   else if (anger < 20){
@@ -76,23 +76,33 @@ function checkMood(){
 }
 
 function displayMood(){
-  if(happiness < 10){
+  if(happiness < 20){
     status.innerHTML = "About to run away!!! Make them Happy"
+    happyBar.style.backgroundColor = "red"
+    status.style.color = "red"
   }
   else if(anger < 20){
     status.innerHTML = "Angry! Play some music to calm them down"
+    angerBar.style.backgroundColor = "red"
+    status.style.color = "red"
   }
   else if(sleep < 20){
     status.innerHTML = "Sleepy! Put your monster to sleep"
+    sleepBar.style.backgroundColor = "red"
+    status.style.color = "red"
   }
   else if(hunger < 20){
     status.innerHTML = "Hungry! Feed your monster"
+    hungerBar.style.backgroundColor = "red"
+    status.style.color = "red"
   }
   else if(happiness > 35){
     status.innerHTML = "Happy!"
+    status.style.color = "green"
   }
   else if(20 < happiness < 35){
     status.innerHTML = "Doing Alright"
+    status.style.color = "Black"
   }
   
 }
