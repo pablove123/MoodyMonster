@@ -45,7 +45,7 @@ width: 100%;
 #happyBar {
   width: 78%;
   height: 15px;
-  background-color: black;
+  background-color: green;
   text-align: center;
   line-height: 20px;
   border: 2px solid black;
@@ -55,7 +55,7 @@ width: 100%;
 #angerBar {
   width: 78%;
   height: 15px;
-  background-color: black;
+  background-color: green;
   text-align: center;
   line-height: 20px;
   border: 2px solid black;
@@ -65,7 +65,7 @@ width: 100%;
 #sleepBar {
   width: 78%;
   height: 15px;
-  background-color: black;
+  background-color: green;
   text-align: center;
   line-height: 20px;
   border: 2px solid black;
@@ -75,7 +75,7 @@ width: 100%;
 #hungerBar {
   width: 78%;
   height: 15px;
-  background-color: black;
+  background-color: green;
   text-align: center;
   line-height: 20px;
   border: 2px solid black;
@@ -109,7 +109,7 @@ h4{
   border: 5px dashed #8963BA; 
   padding: 15px; 
 }
-#startbtn{
+button{
 margin-top: 40px;
 width: 20%;
 line-height: 30px;
@@ -119,6 +119,6 @@ color: #20BF55;
 font-size: 20px;
 font-family: 'Press Start 2P';
 }
-#startbtn:hover{
+button:hover{
   background-color: #9e8fb1;
   }
