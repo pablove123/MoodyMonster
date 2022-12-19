@@ -5,10 +5,15 @@
   let sleep = 40;
   let hunger = 40;
 
-let timeLeft = 80
+let timeLeft = 10
 
 
 //Constants
+const maxHappiness =  40;
+const maxAnger = 40;
+const maxSleep = 40;
+const maxHunger = 40;
+const maxTime = 10
 
 //cached references
 let monster = document.getElementById("monster")
@@ -34,8 +39,18 @@ music.addEventListener("click", boostAnger)
 sleepy.addEventListener("click", boostSleep)
 fun.addEventListener("click", boostHappiness)
 //functions
-displayMood()
-checkMood()
+render()
+
+function render(){
+  let happiness =  maxHappiness;
+  let anger = maxAnger;
+  let sleep = maxSleep;
+  let hunger = maxHunger;
+  let timeLeft = maxTime
+  displayMood()
+  checkMood()
+
+}
 
 
 function checkMood(){
@@ -84,22 +99,22 @@ function displayMood(){
 
 function boostHunger(){
   console.log("Yum!")
-  hunger = hunger + 20
+  hunger = maxHunger 
 }
 
 function boostAnger(){
   console.log("Im not mad")
-  anger = anger + 20
+  anger = maxAnger
 }
 
 function boostSleep(){
   console.log("So woke")
-  sleep = sleep + 20
+  sleep = maxSleep
 }
 
 function boostHappiness(){
   console.log("Wow so happy"); 
-  happiness = happiness + 20
+  happiness = maxHappiness 
 }
 
 let timer = setInterval( function(){
@@ -107,9 +122,15 @@ let timer = setInterval( function(){
   reduceBars()
   checkMood()
   timeLeft -= 1
+  if (happiness < 0 || anger < 0 || sleep < 0|| hunger < 0) {
+    countdown.textContent = 'Game Over'
+    clearInterval(timer)
+    gameOver()
+  }
   if (timeLeft < 0) {
     countdown.textContent = 'Finished!'
     clearInterval(timer)
+    gameWin()
   }
 }, 1000)
 
@@ -124,3 +145,12 @@ function reduceBars(){
   hungerBar.style = `width:${hunger*2}%`
 }
 
+function gameOver(){
+  status.innerHTML = "Your Monster ran way due to neglect. Try again next time"
+  monster.src = ""
+}
+
+function gameWin(){
+  status.innerHTML = "You won! Your monster loves you forever!"
+  monster.src = "https://pbs.twimg.com/media/FkUEJajUoAA7OE2?format=png&name=120x120"
+}
