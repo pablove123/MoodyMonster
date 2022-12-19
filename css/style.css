@@ -3,8 +3,9 @@ body{
   justify-items: center;
   align-items: center;
   margin: 0 25% 0 25%;
-  background-color: cornflowerblue;
-  font-family: 'Press Start 2P'
+  background-color: #241623;
+  font-family: 'Press Start 2P';
+  color: #20BF55; 
 }
 .nav {
   display: flex;
@@ -13,7 +14,7 @@ body{
 }
 nav > div {
   width: 100%;
-  border: 1px solid black;
+  border: 1px solid #8963BA;
   border-radius: 5px;
   text-align: center;
   padding-top: 10px;
@@ -21,6 +22,7 @@ nav > div {
 }
 nav>div:hover{
   cursor: pointer;
+  background-color: rgb(79, 51, 106);
 }
 
 h5{
@@ -41,7 +43,7 @@ width: 100%;
 }
 
 #happyBar {
-  width: 80%;
+  width: 78%;
   height: 15px;
   background-color: black;
   text-align: center;
@@ -51,7 +53,7 @@ width: 100%;
   float: right;
 }
 #angerBar {
-  width: 80%;
+  width: 78%;
   height: 15px;
   background-color: black;
   text-align: center;
@@ -61,7 +63,7 @@ width: 100%;
   float: right;
 }
 #sleepBar {
-  width: 80%;
+  width: 78%;
   height: 15px;
   background-color: black;
   text-align: center;
@@ -71,7 +73,7 @@ width: 100%;
   float: right;
 }
 #hungerBar {
-  width: 80%;
+  width: 78%;
   height: 15px;
   background-color: black;
   text-align: center;
@@ -104,6 +106,19 @@ h1{
   text-align: center;
 }
 h4{
-  border: 3px dashed black; 
-  padding: 5px; 
+  border: 5px dashed #8963BA; 
+  padding: 15px; 
 }
+#startbtn{
+margin-top: 40px;
+width: 20%;
+line-height: 30px;
+background-color: #8963BA;
+border-radius: 7px;
+color: #20BF55; 
+font-size: 20px;
+font-family: 'Press Start 2P';
+}
+#startbtn:hover{
+  background-color: #9e8fb1;
+  }

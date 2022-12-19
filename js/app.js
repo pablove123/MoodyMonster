@@ -17,7 +17,7 @@ const maxTime = 10
 
 //cached references
 let monster = document.getElementById("monster")
-let testbtn = document.getElementById("testbtn")
+let startbtn = document.getElementById("startbtn")
 let status = document.getElementById("status")
 
 let fun = document.getElementById("navFun")
@@ -38,6 +38,7 @@ food.addEventListener("click", boostHunger)
 music.addEventListener("click", boostAnger)
 sleepy.addEventListener("click", boostSleep)
 fun.addEventListener("click", boostHappiness)
+startbtn.addEventListener("click", startGame)
 //functions
 render()
 
@@ -98,11 +99,11 @@ function displayMood(){
   }
   else if(happiness > 35){
     status.innerHTML = "Happy!"
-    status.style.color = "green"
+    status.style.color = "#20BF55"
   }
   else if(20 < happiness < 35){
     status.innerHTML = "Doing Alright"
-    status.style.color = "Black"
+    status.style.color = "#20BF55"
   }
   
 }
@@ -126,23 +127,24 @@ function boostHappiness(){
   console.log("Wow so happy"); 
   happiness = maxHappiness 
 }
-
+function startGame(){
 let timer = setInterval( function(){
-  countdown.textContent = timeLeft + ' seconds remaining!'
-  reduceBars()
   checkMood()
-  timeLeft -= 1
+  countdown.textContent = timeLeft + ' seconds remaining!'
   if (happiness < 0 || anger < 0 || sleep < 0|| hunger < 0) {
     countdown.textContent = 'Game Over'
     clearInterval(timer)
     gameOver()
   }
+  reduceBars()
+  timeLeft -= 1
   if (timeLeft < 0) {
     countdown.textContent = 'Finished!'
     clearInterval(timer)
     gameWin()
   }
 }, 1000)
+}
 
 function reduceBars(){
   happiness --;
@@ -158,9 +160,12 @@ function reduceBars(){
 function gameOver(){
   status.innerHTML = "Your Monster ran way due to neglect. Try again next time"
   monster.src = ""
+  console.log("Game over")
 }
 
 function gameWin(){
   status.innerHTML = "You won! Your monster loves you forever!"
   monster.src = "https://pbs.twimg.com/media/FkUEJajUoAA7OE2?format=png&name=120x120"
+  status.style.color = "#20BF55"
+  status.style.fontSize = "30px"
 }
