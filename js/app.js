@@ -1,4 +1,6 @@
+
 //variables
+
 
 let happiness =  40;
 let anger = 40;
@@ -15,10 +17,17 @@ const maxSleep = 40;
 const maxHunger = 40;
 const maxTime = 60
 
+const grunt = new Audio("../audio/grunt.mp3")
+const growl = new Audio("../audio/growl.mp3")
+const munch = new Audio("../audio/munch.wav")
+const laugh = new Audio("../audio/laugh.wav")
+const backgroundAudio = new Audio("../audio/background.mp3")
+
 //cached references
 let monster = document.getElementById("monster")
 let startbtn = document.getElementById("startbtn")
 let resetbtn = document.getElementById("resetbtn")
+let background = document.getElementById("background")
 let status = document.getElementById("status")
 
 let fun = document.getElementById("navFun")
@@ -41,6 +50,7 @@ sleepy.addEventListener("click", boostSleep)
 fun.addEventListener("click", boostHappiness)
 startbtn.addEventListener("click", startGame)
 resetbtn.addEventListener("click", resetGame)
+background.addEventListener("click", playBackground)
 //functions
 render()
 
@@ -78,25 +88,25 @@ displayMood()
 }
 
 function displayMood(){
-if(happiness < 20){
-  status.innerHTML = "Sad! Play with your monster"
-  status.style.color = "red"
-}
-else if(anger < 20){
-  status.innerHTML = "Angry! Play some music to calm them down";
-  status.style.color = "red"
- 
-}
-else if(sleep < 20){
-  status.innerHTML = "Sleepy! Put your monster to sleep"
-  status.style.color = "red"
-}
-else if(hunger < 20){
-  status.innerHTML = "Hungry! Feed your monster"
-  status.style.color = "red"
-}
-else if(happiness > 35){
-  status.innerHTML = "Happy!"
+  if(happiness < 20){
+    status.innerHTML = "Sad! Play with your monster"
+    status.style.color = "red"
+  }
+  else if(anger < 20){
+    status.innerHTML = "Angry! Play some music to calm them down";
+    status.style.color = "red"
+    
+  }
+  else if(sleep < 20){
+    status.innerHTML = "Sleepy! Put your monster to sleep"
+    status.style.color = "red"
+  }
+  else if(hunger < 20){
+    status.innerHTML = "Hungry! Feed your monster"
+    status.style.color = "red"
+  }
+  else if(happiness > 35){
+    status.innerHTML = "Happy!"
   status.style.color = "#20BF55"
 }
 else if(20 < happiness < 35){
@@ -106,19 +116,23 @@ else if(20 < happiness < 35){
 }
 
 function boostHunger(){
-hunger = maxHunger 
+  hunger = maxHunger 
+  playMunch()
 }
 
 function boostAnger(){
-anger = maxAnger
+  anger = maxAnger
+  playGrunt()
 }
 
 function boostSleep(){
-sleep = maxSleep
+  sleep = maxSleep
+  playGrowl()
 }
 
 function boostHappiness(){
 happiness = maxHappiness 
+playLaugh()
 }
 function startGame(){
   let timer = setInterval( function(){
@@ -166,4 +180,26 @@ status.style.fontSize = "30px"
 function resetGame(){
 render()
 startGame()
+}
+
+function playGrunt(){
+  grunt.volume=1
+  grunt.play()
+}
+function playGrowl(){
+  growl.volume=1
+  growl.play()
+}
+function playLaugh(){
+  laugh.volume=1
+  laugh.play()
+}
+function playMunch(){
+  munch.volume=1
+  munch.play()
+}
+
+function playBackground(){
+  backgroundAudio.volume = .05
+  backgroundAudio.play()
 }
