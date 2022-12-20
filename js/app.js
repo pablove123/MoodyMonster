@@ -23,13 +23,17 @@ const munch = new Audio("../audio/munch.wav")
 const laugh = new Audio("../audio/laugh.wav")
 const backgroundAudio = new Audio("../audio/background.mp3")
 
+
 //cached references
 let monster = document.getElementById("monster")
 let startbtn = document.getElementById("startbtn")
 let resetbtn = document.getElementById("resetbtn")
+let addNamebtn = document.getElementById("addName")
 let background = document.getElementById("background")
 let status = document.getElementById("status")
 let welcome = document.getElementById("welcomeMessage")
+let name = document.getElementById("name")
+let monsterName = document.getElementById("monsterName")
 
 let fun = document.getElementById("navFun")
 let food = document.getElementById("navFood")
@@ -52,6 +56,8 @@ fun.addEventListener("click", boostHappiness)
 startbtn.addEventListener("click", startGame)
 resetbtn.addEventListener("click", resetGame)
 background.addEventListener("click", playBackground)
+addNamebtn.addEventListener("click", changeName)
+
 //functions
 render()
 
@@ -204,4 +210,8 @@ function playMunch(){
 function playBackground(){
   backgroundAudio.volume = .05
   backgroundAudio.play()
+}
+
+function changeName(){
+  name.innerHTML = `${monsterName.value}`
 }

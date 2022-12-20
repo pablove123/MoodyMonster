@@ -23,7 +23,7 @@
   </nav>
   <h6 id = "welcomeMessage">Welcome! Goal of the game is to keep your Moody Monster at bay until the time runs out. Keep track of the monsters status and quickly take care of them.<br>  <br> To begin, click the "START GAME" button.  </h6>
   <h6> <img id = "monster" src="https://pbs.twimg.com/media/FkHUUZ1UEAAsYJL?format=png&name=120x120" alt=""> 
-    <h5>Monster status: <span id="status"></span></h5>
+    <h5><span id = "name">Monster</span>'s status: <span id="status"></span></h5>
     <h4 id= "nav-stats"> <span id="mood-stats"> Moods </span>
       <li>Happy
         <span id="happyBar"></span>
@@ -38,6 +38,7 @@
         <div id="sleepBar"></div>
       </li>
     </h4>
-    </h6>Time left: <span id= timeLeft>60</span></h6><br>
+    <div>Time left: <span id= timeLeft>60</span></div><br>
+    <div><input id="monsterName" type="text" placeholder="Name your monster!"><button id="addName">Add Name</button></div>
 </body>
 </html>
