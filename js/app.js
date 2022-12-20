@@ -29,6 +29,7 @@ let startbtn = document.getElementById("startbtn")
 let resetbtn = document.getElementById("resetbtn")
 let background = document.getElementById("background")
 let status = document.getElementById("status")
+let welcome = document.getElementById("welcomeMessage")
 
 let fun = document.getElementById("navFun")
 let food = document.getElementById("navFood")
@@ -135,6 +136,7 @@ happiness = maxHappiness
 playLaugh()
 }
 function startGame(){
+  welcome.innerHTML = ""
   let timer = setInterval( function(){
   checkMood()
 countdown.textContent = timeLeft + ' seconds remaining!'

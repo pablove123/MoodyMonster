@@ -96,28 +96,34 @@ li{
   font-size: 20px;
 }
 #mood-stats{
-  font-size: 40px;
-  text-align: center;
+  font-size: 30px;
+  
 }
 h6{
-  text-align: right; 
+  text-align: center; 
+  font-family: 'Orbitron', sans-serif;
+  font-size: 20px;
 }
 h1{
   text-align: center;
+  font-size: 50px;
 }
 h4{
   border: 5px dashed #8963BA; 
   padding: 15px; 
 }
 button{
-margin-top: 40px;
-width: 20%;
+margin-bottom: 40px;
+margin-top: 20px;
+width: 30%;
 line-height: 30px;
 background-color: #8963BA;
 border-radius: 7px;
 color: #20BF55; 
 font-size: 20px;
 font-family: 'Press Start 2P';
+align-items: center;
+text-align: center;
 }
 button:hover{
   background-color: #9e8fb1;
