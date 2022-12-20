@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="./css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Hanalei+Fill&family=Press+Start+2P&display=swap" rel="stylesheet">
     <script defer src="./js/app.js"></script>
+    <link rel="shortcut icon" type="image/png" href="https://pbs.twimg.com/media/FkHWoZsUAAAljuE?format=png&name=120x120"/>
     <title>My Moody Monster</title>
   </head>
   <body>
@@ -21,8 +22,9 @@
     <div id = "navMusic"class="dropdown">Music</div>
     <div id = "navSleep"class="dropdown">Sleep</div>
   </nav>
-  <h6 id = "welcomeMessage">Welcome! Goal of the game is to keep your Moody Monster at bay until the time runs out. Keep track of the monsters status and quickly take care of them.<br>  <br> To begin, click the "START GAME" button.  </h6>
+  <h6 id = "welcomeMessage">Welcome! Goal of the game is to keep your Moody Monster at bay until the time runs out. Keep track of the monsters status and quickly take care of them. Dont forget to name your monster!<br>  <br> To begin, click the "START GAME" button.  </h6>
   <h6> <img id = "monster" src="https://pbs.twimg.com/media/FkHUUZ1UEAAsYJL?format=png&name=120x120" alt=""> 
+    <footer><input id="monsterName" type="text" placeholder="Name your monster!"><button id="addName">Add Name</button></footer>
     <h5><span id = "name">Monster</span>'s status: <span id="status"></span></h5>
     <h4 id= "nav-stats"> <span id="mood-stats"> Moods </span>
       <li>Happy
@@ -39,6 +41,5 @@
       </li>
     </h4>
     <div>Time left: <span id= timeLeft>60</span></div><br>
-    <div><input id="monsterName" type="text" placeholder="Name your monster!"><button id="addName">Add Name</button></div>
 </body>
 </html>

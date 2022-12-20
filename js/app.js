@@ -25,27 +25,28 @@ const backgroundAudio = new Audio("../audio/background.mp3")
 
 
 //cached references
-let monster = document.getElementById("monster")
-let startbtn = document.getElementById("startbtn")
-let resetbtn = document.getElementById("resetbtn")
-let addNamebtn = document.getElementById("addName")
-let background = document.getElementById("background")
-let status = document.getElementById("status")
-let welcome = document.getElementById("welcomeMessage")
-let name = document.getElementById("name")
-let monsterName = document.getElementById("monsterName")
+const monster = document.getElementById("monster")
+const startbtn = document.getElementById("startbtn")
+const resetbtn = document.getElementById("resetbtn")
+const addNamebtn = document.getElementById("addName")
+const background = document.getElementById("background")
+const status = document.getElementById("status")
+const welcome = document.getElementById("welcomeMessage")
+const name = document.getElementById("name")
+const monsterName = document.getElementById("monsterName")
 
-let fun = document.getElementById("navFun")
-let food = document.getElementById("navFood")
-let music = document.getElementById("navMusic")
-let sleepy = document.getElementById("navSleep")
 
-let happyBar = document.getElementById("happyBar")
-let hungerBar = document.getElementById("hungerBar")
-let sleepBar = document.getElementById("sleepBar")
-let angerBar = document.getElementById("angerBar")
+const fun = document.getElementById("navFun")
+const food = document.getElementById("navFood")
+const music = document.getElementById("navMusic")
+const sleepy = document.getElementById("navSleep")
 
-let countdown = document.getElementById('timeLeft')
+const happyBar = document.getElementById("happyBar")
+const hungerBar = document.getElementById("hungerBar")
+const sleepBar = document.getElementById("sleepBar")
+const angerBar = document.getElementById("angerBar")
+
+const countdown = document.getElementById('timeLeft')
 
 //Event Listeners
 // testbtn.addEventListener("click", checkMood)
@@ -98,19 +99,24 @@ function displayMood(){
   if(happiness < 20){
     status.innerHTML = "Sad! Play with your monster"
     status.style.color = "red"
+    happyBar.style.backgroundColor = "red"
   }
   else if(anger < 20){
     status.innerHTML = "Angry! Play some music to calm them down";
     status.style.color = "red"
+    angerBar.style.backgroundColor = "red"
     
   }
   else if(sleep < 20){
     status.innerHTML = "Sleepy! Put your monster to sleep"
     status.style.color = "red"
+    sleepBar.style.backgroundColor = "red"
+    
   }
   else if(hunger < 20){
     status.innerHTML = "Hungry! Feed your monster"
     status.style.color = "red"
+    hungerBar.style = "color: red"
   }
   else if(happiness > 35){
     status.innerHTML = "Happy!"
@@ -143,6 +149,8 @@ playLaugh()
 }
 function startGame(){
   welcome.innerHTML = ""
+  monsterName.remove()
+  addName.remove()
   let timer = setInterval( function(){
   checkMood()
 countdown.textContent = timeLeft + ' seconds remaining!'
