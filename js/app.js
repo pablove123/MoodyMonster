@@ -97,24 +97,24 @@ displayMood()
 
 function displayMood(){
   if(happiness < 20){
-    status.innerHTML = "Sad! Play with your monster"
+    status.innerHTML = `Sad! Play with ${monsterName.value}`
     status.style.color = "red"
     happyBar.style.backgroundColor = "red"
   }
   else if(anger < 20){
-    status.innerHTML = "Angry! Play some music to calm them down";
+    status.innerHTML = `Angry! Play some music to calm ${monsterName.value} down`;
     status.style.color = "red"
     angerBar.style.backgroundColor = "red"
     
   }
   else if(sleep < 20){
-    status.innerHTML = "Sleepy! Put your monster to sleep"
+    status.innerHTML = `Sleepy! Put  ${monsterName.value} to sleep`
     status.style.color = "red"
     sleepBar.style.backgroundColor = "red"
     
   }
   else if(hunger < 20){
-    status.innerHTML = "Hungry! Feed your monster"
+    status.innerHTML = `Hungry! Feed ${monsterName.value}`
     status.style.color = "red"
     hungerBar.style = "color: red"
   }
@@ -181,13 +181,13 @@ hungerBar.style = `width:${hunger*2}%`
 }
 
 function gameOver(){
-status.innerHTML = "Your Monster ran way due to neglect. Try again next time"
+status.innerHTML = `${monsterName.value}ran way due to neglect. Try again next time`; 
 monster.src = ""
 console.log("Game over")
 }
 
 function gameWin(){
-status.innerHTML = "You won! Your monster loves you forever!"
+status.innerHTML = `You won! ${monsterName.value} loves you forever!`
 monster.src = "https://pbs.twimg.com/media/FkUEJajUoAA7OE2?format=png&name=120x120"
 status.style.color = "#20BF55"
 status.style.fontSize = "30px"
