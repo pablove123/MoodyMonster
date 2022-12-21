@@ -15,12 +15,14 @@ const maxHappiness =  40;
 const maxAnger = 40;
 const maxSleep = 40;
 const maxHunger = 40;
-const maxTime = 60
+const maxTime = 5
 
 const grunt = new Audio("../audio/grunt.mp3")
 const growl = new Audio("../audio/growl.mp3")
 const munch = new Audio("../audio/munch.wav")
 const laugh = new Audio("../audio/laugh.wav")
+const heal = new Audio("../audio/heal.wav")
+const heal1 = new Audio("../audio/heal1.wav")
 const backgroundAudio = new Audio("../audio/background.mp3")
 
 
@@ -68,7 +70,6 @@ anger = maxAnger;
 sleep = maxSleep;
 hunger = maxHunger;
 timeLeft = maxTime
-displayMood()
 checkMood()
 }
 
@@ -105,7 +106,7 @@ function displayMood(){
     status.innerHTML = `Angry! Play some music to calm ${monsterName.value} down`;
     status.style.color = "red"
     angerBar.style.backgroundColor = "red"
-    
+
   }
   else if(sleep < 20){
     status.innerHTML = `Sleepy! Put  ${monsterName.value} to sleep`
@@ -135,7 +136,7 @@ function boostHunger(){
 
 function boostAnger(){
   anger = maxAnger
-  playGrunt()
+  playheal()
 }
 
 function boostSleep(){
@@ -149,8 +150,7 @@ playLaugh()
 }
 function startGame(){
   welcome.innerHTML = ""
-  monsterName.remove()
-  addName.remove()
+  removeEl()
   let timer = setInterval( function(){
   checkMood()
 countdown.textContent = timeLeft + ' seconds remaining!'
@@ -170,27 +170,26 @@ if (timeLeft < 0) {
 }
 
 function reduceBars(){
-happiness --;
+happiness = happiness - 2;
 happyBar.style = `width:${happiness * 2}%`
 anger--;
 angerBar.style = `width:${anger *2}%`
-sleep--;
+sleep = sleep -.5;
 sleepBar.style = `width:${sleep *2}%`
-hunger--;
+hunger = hunger -1.5;
 hungerBar.style = `width:${hunger*2}%`
 }
 
 function gameOver(){
 status.innerHTML = `${monsterName.value}ran way due to neglect. Try again next time`; 
 monster.src = ""
-console.log("Game over")
 }
 
 function gameWin(){
 status.innerHTML = `You won! ${monsterName.value} loves you forever!`
-monster.src = "https://pbs.twimg.com/media/FkUEJajUoAA7OE2?format=png&name=120x120"
 status.style.color = "#20BF55"
 status.style.fontSize = "30px"
+monster.src = "../Pictures/end1.png"
 }
 
 function resetGame(){
@@ -198,9 +197,9 @@ render()
 startGame()
 }
 
-function playGrunt(){
+function playheal(){
   grunt.volume=1
-  grunt.play()
+  heal.play()
 }
 function playGrowl(){
   growl.volume=1
@@ -216,10 +215,16 @@ function playMunch(){
 }
 
 function playBackground(){
-  backgroundAudio.volume = .05
+  backgroundAudio.volume = .025
   backgroundAudio.play()
 }
 
 function changeName(){
   name.innerHTML = `${monsterName.value}`
+}
+
+function removeEl(){
+  if(countdown.textContent !== 'Game Over'){
+  monsterName.remove()
+  addName.remove()}
 }
