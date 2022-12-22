@@ -1,8 +1,8 @@
 # My Moody Monster 👹
-![alt text](/Pictures/screenshot.png)
+![alt text](/Pictures/screenshot1.png)
 ## [PLAY GAME HERE](https://mymoodymonster.netlify.app)
 
-### Have you ever wanted to take care of your veyr own monster? In this web browser game you finally can! But watch out, your monster is know for being very moody. Keep track of multiple monster stats and have your monster love you forever! Built with JavaScript, HTML and CSS
+### Have you ever wanted to take care of your very own monster? In this web browser game you finally can! But watch out, your monster is know for being very moody. Keep track of multiple monster stats and have your monster love you forever! Built with JavaScript, HTML and CSS
 
 #### Resources
 - Art: Drawn using Pixilart.com
