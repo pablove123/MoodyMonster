@@ -2,19 +2,19 @@
 //variables
 
 
-let happiness =  40;
-let anger = 40;
-let sleep = 40;
-let hunger = 40;
+let happiness =  80;
+let anger = 80;
+let sleep = 80;
+let hunger = 80;
 
 let timeLeft = 60
 
 
 //Constants
-const maxHappiness =  40;
-const maxAnger = 40;
-const maxSleep = 40;
-const maxHunger = 40;
+const maxHappiness =  80;
+const maxAnger = 80;
+const maxSleep = 80;
+const maxHunger = 80;
 const maxTime = 60
 
 const grunt = new Audio("../audio/grunt.mp3")
@@ -75,19 +75,19 @@ checkMood()
 
 
 function checkMood(){
-if (happiness < 20){
+if (happiness < 40){
   monster.src = "../Pictures/sad.png"; 
 }
-else if (anger < 20){
+else if (anger < 40){
   monster.src = "../Pictures/angry.png"; 
 }
-else if (sleep < 20){
+else if (sleep < 40){
   monster.src = "../Pictures/tired.png"; 
 }
-else if (hunger < 20){
+else if (hunger < 40){
   monster.src = "../Pictures/hungry.png"; 
 } 
-else if (happiness > 35){
+else if (happiness > 65){
   monster.src = "../Pictures/happy.png"; 
 }  
 else{
@@ -97,33 +97,33 @@ displayMood()
 }
 
 function displayMood(){
-  if(happiness < 20){
+  if(happiness < 40){
     status.innerHTML = `Sad! Play with ${monsterName.value}`
     status.style.color = "red"
     happyBar.style.backgroundColor = "red"
   }
-  else if(anger < 20){
+  else if(anger < 40){
     status.innerHTML = `Angry! Play some music to calm ${monsterName.value} down`;
     status.style.color = "red"
     angerBar.style.backgroundColor = "red"
 
   }
-  else if(sleep < 20){
+  else if(sleep < 40){
     status.innerHTML = `Sleepy! Put  ${monsterName.value} to sleep`
     status.style.color = "red"
     sleepBar.style.backgroundColor = "red"
     
   }
-  else if(hunger < 20){
+  else if(hunger < 40){
     status.innerHTML = `Hungry! Feed ${monsterName.value}`
     status.style.color = "red"
     hungerBar.style = "color: red"
   }
-  else if(happiness > 35){
+  else if(happiness > 65){
     status.innerHTML = "Happy!"
   status.style.color = "#20BF55"
 }
-else if(20 < happiness < 35){
+else if(40 < happiness < 65){
   status.innerHTML = "Doing Alright"
   status.style.color = "#20BF55"
 }
@@ -170,14 +170,14 @@ if (timeLeft < 0) {
 }
 
 function reduceBars(){
-happiness = happiness - 2;
-happyBar.style = `width:${happiness * 2}%`
-anger--;
-angerBar.style = `width:${anger *2}%`
-sleep = sleep - .75;
-sleepBar.style = `width:${sleep *2}%`
-hunger = hunger -1.5;
-hungerBar.style = `width:${hunger*2}%`
+happiness = happiness - 5;
+happyBar.style = `width:${happiness}%`
+anger = anger -3;
+angerBar.style = `width:${anger}%`
+sleep = sleep - 2;
+sleepBar.style = `width:${sleep}%`
+hunger = hunger -2.5;
+hungerBar.style = `width:${hunger}%`
 }
 
 function gameOver(){
