@@ -19,6 +19,7 @@ const maxHumor = 80;
 const maxTime = 60
 
 const grunt = new Audio("../audio/grunt.mp3")
+const squeak = new Audio("../audio/squeak.wav")
 const growl = new Audio("../audio/growl.mp3")
 const munch = new Audio("../audio/munch.wav")
 const laugh = new Audio("../audio/laugh.wav")
@@ -155,9 +156,9 @@ function boostAnger(){
   playheal()
 }
 function boostHumor(){
-  console.log("test")
+  
   humor = maxHumor
-  playheal()
+  playLaugh()
 }
 
 function boostSleep(){
@@ -167,7 +168,7 @@ function boostSleep(){
 
 function boostHappiness(){
 happiness = maxHappiness 
-playLaugh()
+playSqueak()
 }
 function startGame(){
   welcome.innerHTML = ""
@@ -235,6 +236,11 @@ function playLaugh(){
 function playMunch(){
   munch.volume=1
   munch.play()
+}
+
+function playSqueak(){
+  squeak.volume = .5
+  squeak.play()
 }
 
 function playBackground(){
