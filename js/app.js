@@ -15,7 +15,7 @@ const maxHappiness =  40;
 const maxAnger = 40;
 const maxSleep = 40;
 const maxHunger = 40;
-const maxTime = 5
+const maxTime = 60
 
 const grunt = new Audio("../audio/grunt.mp3")
 const growl = new Audio("../audio/growl.mp3")
@@ -174,7 +174,7 @@ happiness = happiness - 2;
 happyBar.style = `width:${happiness * 2}%`
 anger--;
 angerBar.style = `width:${anger *2}%`
-sleep = sleep -.5;
+sleep = sleep - .75;
 sleepBar.style = `width:${sleep *2}%`
 hunger = hunger -1.5;
 hungerBar.style = `width:${hunger*2}%`
@@ -224,7 +224,10 @@ function changeName(){
 }
 
 function removeEl(){
-  if(countdown.textContent !== 'Game Over'){
-  monsterName.remove()
-  addName.remove()}
+  if(addName && monsterName){
+    return
+  } else {
+    monsterName.remove()
+    addName.remove()
+}
 }
