@@ -76,22 +76,22 @@ checkMood()
 
 function checkMood(){
 if (happiness < 20){
-  monster.src = "https://pbs.twimg.com/media/FkHXjOdVsAEsK2O?format=png&name=120x120"; 
+  monster.src = "../Pictures/sad.png"; 
 }
 else if (anger < 20){
-  monster.src = "https://pbs.twimg.com/media/FkHa9fpUEAAf2qc?format=png&name=120x120"; 
+  monster.src = "../Pictures/angry.png"; 
 }
 else if (sleep < 20){
-  monster.src = "https://pbs.twimg.com/media/FkHdKJbUYAAWQ0R?format=png&name=120x120"; 
+  monster.src = "../Pictures/tired.png"; 
 }
 else if (hunger < 20){
-  monster.src = "https://pbs.twimg.com/media/FkHb31YUUAA-RRz?format=png&name=120x120"; 
+  monster.src = "../Pictures/hungry.png"; 
 } 
 else if (happiness > 35){
-  monster.src = "https://pbs.twimg.com/media/FkHWoZsUAAAljuE?format=png&name=120x120"; 
+  monster.src = "../Pictures/happy.png"; 
 }  
 else{
-  monster.src = "https://pbs.twimg.com/media/FkHUUZ1UEAAsYJL?format=png&name=120x120"; 
+  monster.src = "../Pictures/normal.png"; 
 }  
 displayMood()
 }
@@ -150,7 +150,7 @@ playLaugh()
 }
 function startGame(){
   welcome.innerHTML = ""
-  removeEl()
+  
   let timer = setInterval( function(){
   checkMood()
 countdown.textContent = timeLeft + ' seconds remaining!'
@@ -221,13 +221,15 @@ function playBackground(){
 
 function changeName(){
   name.innerHTML = `${monsterName.value}`
+  removeEl()
 }
 
 function removeEl(){
-  if(addName && monsterName){
-    return
-  } else {
+  // let test = 0
+  // if(test == 1){
+  //   return
+  // } else {
+    //  test = 1
     monsterName.remove()
     addName.remove()
-}
 }
