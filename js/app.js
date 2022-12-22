@@ -30,7 +30,10 @@ const backgroundAudio = new Audio("../audio/background.mp3")
 const jokes = [
   "What kind of monster loves to disco? The boogieman!",
   " Why did the monster need lip balm? His lips were Kraken.",
-  "Why couldn’t the mummy go to school with the witch? He couldn’t spell."]
+  "Why couldn’t the mummy go to school with the witch? He couldn’t spell.", "Monsters aren’t usually good at math. Unless you count Dracula.", 
+  "Why do ghosts like to ride in elevators? It raises their spirits",
+  "What do you get if you cross Bambi with a ghost? Bamboo" 
+]
 
 
 //cached references
@@ -156,7 +159,7 @@ function boostAnger(){
   playheal()
 }
 function boostHumor(){
-  
+  tellJoke()
   humor = maxHumor
   playLaugh()
 }
@@ -192,15 +195,15 @@ if (timeLeft < 0) {
 }
 
 function reduceBars(){
-happiness = happiness - 5;
+happiness = happiness - 2;
 happyBar.style = `width:${happiness}%`
-anger = anger -3;
+anger = anger -2;
 angerBar.style = `width:${anger}%`
-sleep = sleep - 2;
+sleep--;
 sleepBar.style = `width:${sleep}%`
-hunger = hunger -2.5;
+hunger = hunger -2;
 hungerBar.style = `width:${hunger}%`
-humor = humor -4 ;
+humor = humor -2 ;
 humorBar.style = `width:${humor}%`
 }
 
@@ -254,11 +257,11 @@ function changeName(){
 }
 
 function removeEl(){
-  // let test = 0
-  // if(test == 1){
-  //   return
-  // } else {
-    //  test = 1
     monsterName.remove()
     addName.remove()
+}
+
+function tellJoke(){
+ let i = [Math.floor(Math.random() * jokes.length)]
+ joke.innerHTML = `Joke: ${jokes[i]}`
 }
