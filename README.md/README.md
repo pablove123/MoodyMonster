@@ -8,3 +8,9 @@
 - Art: Drawn using Pixilart.com
 - Sound Effects: SilverIllusionist,tonsil5, JarredGibb and bigmonmulgrew on freesound.org
 - Background Music: "Cheer up!" by Keys of Moon on chosic.com
+
+#### Future Features
+- [x] Add jokes and Funny Mood
+- [ ] Update Monster look
+- [ ] Add new sound effects
+- [ ] Make it mobile friendly

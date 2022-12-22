@@ -6,7 +6,7 @@ let happiness =  80;
 let anger = 80;
 let sleep = 80;
 let hunger = 80;
-
+let humor = 80;
 let timeLeft = 60
 
 
@@ -15,6 +15,7 @@ const maxHappiness =  80;
 const maxAnger = 80;
 const maxSleep = 80;
 const maxHunger = 80;
+const maxHumor = 80;
 const maxTime = 60
 
 const grunt = new Audio("../audio/grunt.mp3")
@@ -24,6 +25,11 @@ const laugh = new Audio("../audio/laugh.wav")
 const heal = new Audio("../audio/heal.wav")
 const heal1 = new Audio("../audio/heal1.wav")
 const backgroundAudio = new Audio("../audio/background.mp3")
+
+const jokes = [
+  "What kind of monster loves to disco? The boogieman!",
+  " Why did the monster need lip balm? His lips were Kraken.",
+  "Why couldn’t the mummy go to school with the witch? He couldn’t spell."]
 
 
 //cached references
@@ -36,17 +42,20 @@ const status = document.getElementById("status")
 const welcome = document.getElementById("welcomeMessage")
 const name = document.getElementById("name")
 const monsterName = document.getElementById("monsterName")
+const joke = document.getElementById("jokes")
 
 
 const fun = document.getElementById("navFun")
 const food = document.getElementById("navFood")
 const music = document.getElementById("navMusic")
 const sleepy = document.getElementById("navSleep")
+const funny = document.getElementById("navJoke")
 
 const happyBar = document.getElementById("happyBar")
 const hungerBar = document.getElementById("hungerBar")
 const sleepBar = document.getElementById("sleepBar")
 const angerBar = document.getElementById("angerBar")
+const humorBar = document.getElementById("humorBar")
 
 const countdown = document.getElementById('timeLeft')
 
@@ -55,6 +64,7 @@ const countdown = document.getElementById('timeLeft')
 food.addEventListener("click", boostHunger)
 music.addEventListener("click", boostAnger)
 sleepy.addEventListener("click", boostSleep)
+funny.addEventListener("click", boostHumor)
 fun.addEventListener("click", boostHappiness)
 startbtn.addEventListener("click", startGame)
 resetbtn.addEventListener("click", resetGame)
@@ -69,6 +79,7 @@ happiness =  maxHappiness;
 anger = maxAnger;
 sleep = maxSleep;
 hunger = maxHunger;
+humor = maxHumor;
 timeLeft = maxTime
 checkMood()
 }
@@ -80,6 +91,9 @@ if (happiness < 40){
 }
 else if (anger < 40){
   monster.src = "../Pictures/angry.png"; 
+}
+else if (humor < 40){
+  monster.src = "../Pictures/bored.png"; 
 }
 else if (sleep < 40){
   monster.src = "../Pictures/tired.png"; 
@@ -105,8 +119,10 @@ function displayMood(){
   else if(anger < 40){
     status.innerHTML = `Angry! Play some music to calm ${monsterName.value} down`;
     status.style.color = "red"
-    angerBar.style.backgroundColor = "red"
-
+    angerBar.style.backgroundColor = "red"}
+  else if(humor < 40){
+    status.innerHTML = `Bored. Tell ${monsterName.value} a joke`;
+    status.style.color = "red"
   }
   else if(sleep < 40){
     status.innerHTML = `Sleepy! Put  ${monsterName.value} to sleep`
@@ -138,6 +154,11 @@ function boostAnger(){
   anger = maxAnger
   playheal()
 }
+function boostHumor(){
+  console.log("test")
+  humor = maxHumor
+  playheal()
+}
 
 function boostSleep(){
   sleep = maxSleep
@@ -154,7 +175,7 @@ function startGame(){
   let timer = setInterval( function(){
   checkMood()
 countdown.textContent = timeLeft + ' seconds remaining!'
-if (happiness < 0 || anger < 0 || sleep < 0|| hunger < 0) {
+if (happiness < 0 || anger < 0 || sleep < 0|| hunger < 0 || humor < 0) {
   countdown.textContent = 'Game Over'
   clearInterval(timer)
   gameOver()
@@ -178,6 +199,8 @@ sleep = sleep - 2;
 sleepBar.style = `width:${sleep}%`
 hunger = hunger -2.5;
 hungerBar.style = `width:${hunger}%`
+humor = humor -4 ;
+humorBar.style = `width:${humor}%`
 }
 
 function gameOver(){
