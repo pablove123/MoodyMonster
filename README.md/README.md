@@ -21,3 +21,5 @@
 - [ ] Update Monster look
 - [ ] Add new sound effects
 - [ ] Make it mobile friendly
+
+##### [Planning materials](https://docs.google.com/document/d/1h_y4o1nVPcvpdjTDnc-Aqv1khMrwpxcs78wp1DotwLk/edit?usp=sharing)
