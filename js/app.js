@@ -197,13 +197,13 @@
   function reduceBars(){
   happiness = happiness - 2;
   happyBar.style = `width:${happiness}%`
-  anger = anger -2;
+  anger = anger -2.25;
   angerBar.style = `width:${anger}%`
   sleep--;
   sleepBar.style = `width:${sleep}%`
-  hunger = hunger -2;
+  hunger = hunger -2.75;
   hungerBar.style = `width:${hunger}%`
-  humor = humor -2 ;
+  humor = humor -2.5 ;
   humorBar.style = `width:${humor}%`
   }
 
