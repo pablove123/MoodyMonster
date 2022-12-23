@@ -225,7 +225,7 @@
   }
 
   function playheal(){
-    grunt.volume=1
+    heal.volume = .2
     heal.play()
   }
   function playGrowl(){
@@ -237,12 +237,12 @@
     laugh.play()
   }
   function playMunch(){
-    munch.volume=1
+    munch.volume=.5
     munch.play()
   }
 
   function playSqueak(){
-    squeak.volume = .5
+    squeak.volume = .2
     squeak.play()
   }
 
