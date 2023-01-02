@@ -195,16 +195,16 @@
   }
 
   function reduceBars(){
-    happiness = happiness - 2;
-    happyBar.style = `width:${happiness}%`
-    anger = anger -2.25;
-    angerBar.style = `width:${anger}%`
-    sleep--;
-    sleepBar.style = `width:${sleep}%`
-    hunger = hunger -2.25;
-    hungerBar.style = `width:${hunger}%`
-    humor = humor -2.25 ;
-    humorBar.style = `width:${humor}%`
+  happiness = happiness - 2;
+  happyBar.style = `width:${happiness}%`
+  anger = anger -2.25;
+  angerBar.style = `width:${anger}%`
+  sleep--;
+  sleepBar.style = `width:${sleep}%`
+  hunger = hunger -2.25;
+  hungerBar.style = `width:${hunger}%`
+  humor = humor -2.25 ;
+  humorBar.style = `width:${humor}%`
   }
 
   function gameOver(){
