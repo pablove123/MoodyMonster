@@ -195,33 +195,33 @@
   }
 
   function reduceBars(){
-  happiness = happiness - 2;
-  happyBar.style = `width:${happiness}%`
-  anger = anger -2.25;
-  angerBar.style = `width:${anger}%`
-  sleep--;
-  sleepBar.style = `width:${sleep}%`
-  hunger = hunger -2.25;
-  hungerBar.style = `width:${hunger}%`
-  humor = humor -2.25 ;
-  humorBar.style = `width:${humor}%`
+    happiness = happiness - 2;
+    happyBar.style = `width:${happiness}%`
+    anger = anger -2.25;
+    angerBar.style = `width:${anger}%`
+    sleep--;
+    sleepBar.style = `width:${sleep}%`
+    hunger = hunger -2.25;
+    hungerBar.style = `width:${hunger}%`
+    humor = humor -2.25 ;
+    humorBar.style = `width:${humor}%`
   }
 
   function gameOver(){
-  status.innerHTML = `${monsterName.value} ran way due to neglect. Try again next time`; 
-  monster.src = ""
+    status.innerHTML = `${monsterName.value} ran way due to neglect. Try again next time`; 
+    monster.src = ""
   }
 
   function gameWin(){
-  status.innerHTML = `You won! ${monsterName.value} loves you forever!`
-  status.style.color = "#20BF55"
-  status.style.fontSize = "30px"
-  monster.src = "../Pictures/end1.png"
+    status.innerHTML = `You won! ${monsterName.value} loves you forever!`
+    status.style.color = "#20BF55"
+    status.style.fontSize = "30px"  
+    monster.src = "../Pictures/end1.png"
   }
 
   function resetGame(){
-  render()
-  startGame()
+    render()
+    startGame()
   }
 
   function playheal(){
@@ -262,6 +262,6 @@
   }
 
   function tellJoke(){
-  let i = [Math.floor(Math.random() * jokes.length)]
-  joke.innerHTML = `Joke: ${jokes[i]}`
+    let i = [Math.floor(Math.random() * jokes.length)]
+    joke.innerHTML = `Joke: ${jokes[i]}`
   }
